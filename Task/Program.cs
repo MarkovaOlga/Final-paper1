@@ -4,7 +4,8 @@
 
 Console.Write("Введите количество элементов массива: ");
 int elements = Convert.ToInt32(Console.ReadLine());
-
+string[] newarray = CreateArrayString(elements);
+PrintArray(newarray);
 
 string[] CreateArrayString(int elem)
 {
@@ -27,3 +28,23 @@ void PrintArray(string[] array)
     }
     Console.WriteLine("]");
 }
+
+string[] ChooseElemTrheeSymb(string[] array, int maxel)
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= maxel) count++;
+    }
+    string[] array2 = new string[count];
+    for (int i = 0, j = 0; i < array.Length; i++) 
+    {
+        if (array[i].Length <= maxel) 
+        {
+            array2[j] = array[i];
+            j++;               
+        }
+    }
+    return array2;
+}
+
