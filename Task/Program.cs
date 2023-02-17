@@ -6,6 +6,10 @@ Console.Write("Введите количество элементов масси
 int elements = Convert.ToInt32(Console.ReadLine());
 string[] newarray = CreateArrayString(elements);
 PrintArray(newarray);
+int maxelem = 3;
+string[] newarray2 = ChooseMaxElemSymb(newarray, maxelem);
+PrintArray(newarray2);
+
 
 string[] CreateArrayString(int elem)
 {
@@ -29,7 +33,7 @@ void PrintArray(string[] array)
     Console.WriteLine("]");
 }
 
-string[] ChooseElemTrheeSymb(string[] array, int maxel)
+string[] ChooseMaxElemSymb(string[] array, int maxel)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -37,12 +41,12 @@ string[] ChooseElemTrheeSymb(string[] array, int maxel)
         if (array[i].Length <= maxel) count++;
     }
     string[] array2 = new string[count];
-    for (int i = 0, j = 0; i < array.Length; i++) 
+    for (int i = 0, j = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= maxel) 
+        if (array[i].Length <= maxel)
         {
             array2[j] = array[i];
-            j++;               
+            j++;
         }
     }
     return array2;
